@@ -7,6 +7,14 @@ A server configuration and deployment tool utilizing a docker-based back-end.
 ## Configuration & Usage
 
 
+Worklog:
+
+- [ ] Building steps
+- [ ] Run locally
+- [ ] Default config for deathmatch
+- [ ] Stacked configs for admin password
+
+
 
 
 ## Running on Azure Container Instance
@@ -14,8 +22,6 @@ A server configuration and deployment tool utilizing a docker-based back-end.
 Worklog:
 
 - [x] Uploading wads to Azure Files
-- [ ] Default config for deathmatch
-- [ ] Stacked configs for admin password
 - [ ] Build container image
 - [ ] Start container steps
 
