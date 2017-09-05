@@ -6,12 +6,11 @@ RUN dpkg-divert --local --rename --add /sbin/initctl && \
  ln -sf /bin/false /usr/sbin/policy-rc.d
 
 #Update the OS
-RUN apt-get update --yes
-RUN apt-get upgrade --yes
+RUN apt-get update --yes ; apt-get install -y software-properties-common curl sudo ; apt-get upgrade --yes
 
 #Specifically add the Zandronum repo and install the application
 RUN apt-add-repository 'deb http://debian.drdteam.org/ stable multiverse'
-RUN wget -O - http://debian.drdteam.org/drdteam.gpg | sudo apt-key add -
+RUN curl http://debian.drdteam.org/drdteam.gpg | sudo apt-key add -
 RUN apt-get update && apt-get upgrade
 RUN apt-get install --yes --quiet libsdl-image1.2 zandronum 
 
@@ -25,8 +24,8 @@ RUN mkdir /home/zandronum/config && \
   mkdir /home/zandronum/wads && \
   mkdir /home/zandronum/iwads && \
   mkdir /home/zandronum/bin/
-ADD /config/ /home/zandronum/config/
-ADD /bin/ /home/zandronum/bin/
+ADD /zandronum/config/ /home/zandronum/config/
+ADD /zandronum/bin/ /home/zandronum/bin/
 
 CMD ["/zandronum/srv-exec/summon.sh"]
 ENTRYPOINT ["/zandronum/srv-exec/summon"]
