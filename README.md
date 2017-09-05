@@ -14,7 +14,18 @@ Worklog:
 - [ ] Default config for deathmatch
 - [ ] Stacked configs for admin password
 
+Still failing to launch
 
+```
+docker build -t zandronum .
+docker run -it zandronum bash
+```
+
+```
+zandronum@9dced7bc2c41:~/bin$ /usr/games/zandronum/zandronum-server
+/usr/games/zandronum/zandronum-server: error while loading shared libraries: libfluidsynth.so.1: cannot open shared object file: No such file or directory
+zandronum@9dced7bc2c41:~/bin$ exit
+```
 
 
 ## Running on Azure Container Instance
